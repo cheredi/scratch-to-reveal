@@ -12,7 +12,7 @@
       brush        = new Image();
       
     // base64 Workaround because Same-Origin-Policy
-    image.src = 'img/Foreground2.png'
+    image.src = 'img/BG1.png'
     image.onload = function() {
     ctx.drawImage(image, 0, 0);
     // Show the form when Image is loaded.
@@ -77,7 +77,7 @@
   function handlePercentage(filledInPixels) {
     filledInPixels = filledInPixels || 0;
     // console.log(filledInPixels + '%');
-    if (filledInPixels > 50) {
+    if (filledInPixels > 13) {
       canvas.parentNode.removeChild(canvas);
       document.querySelector('#bridgeContainer').classList.add('zoom');
     }
@@ -114,3 +114,11 @@
   }
   
 })();
+
+$('#bridgeContainer').on('mouseover', function() {
+  setTimeout(function(){ 
+    $('#bridgeContainer').css('background-image', 'url(img/new_price.png');
+  },1500); 
+  
+})
+
